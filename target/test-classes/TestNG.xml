@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="KL Test Suite" verbose="1" >
+  <test name="Regression Test Suite" >
+    <classes>
+       <class name="com.klaf.testScripts.InitialLoginAttempt" />
+    </classes>
+  </test>
+</suite>
