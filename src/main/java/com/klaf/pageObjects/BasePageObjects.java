@@ -51,6 +51,7 @@ public class BasePageObjects
         WebElement aideSup = driver.findElement(By.id("doc_3"));
         String formName = aideSup.getText();
         System.out.println(formName);
+        WebDriverWait wait = new WebDriverWait(driver, 60);
         wait.until(ExpectedConditions.elementToBeClickable(aideSup));
         System.out.println("Navigating to Aide Supervisory Visit form");
         aideSup.click();
