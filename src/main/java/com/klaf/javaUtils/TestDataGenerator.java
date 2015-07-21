@@ -3,6 +3,8 @@ package com.klaf.javaUtils;
 import java.util.HashMap;
 import java.util.Random;
 
+import com.klaf.pageObjects.AideSupVisitObject;
+
 public class TestDataGenerator 
 {
 	
@@ -13,22 +15,22 @@ public class TestDataGenerator
 	public void generateName()
 	{
 		int numId = randInt(100, 1000);
-		this.firstName = "testFName"+numId;
-		this.lastName = "testLName"+numId;
+		this.firstName = "Alister"+numId;
+		this.lastName = "Cook"+numId;
 		this.middleName = "M";
 	}
 	
-	public String getFName()
+	public String getFirstName()
 	{
 		return this.firstName;
 	}
 	
-	public String getLName()
+	public String getLastName()
 	{
 		return this.lastName;
 	}
 	
-	public String getMName()
+	public String getMiddleName()
 	{
 		return this.middleName;
 	}
@@ -50,13 +52,13 @@ public class TestDataGenerator
 		
 		if(formName.equalsIgnoreCase("aideSupVisit"))
 		{
-			AideSupervisoryFormObject aideSup = new AideSupervisoryFormObject();
+			AideSupVisitObject aideSup = new AideSupVisitObject(null);
 			aideSup.setChangesText(randomStringGenerator(200, "alphanum"));
 			aideSup.setCommentsText(randomStringGenerator(200, "alphanum"));
 			
-			formObj.put("FirstName", this.getFName());
-			formObj.put("MiddleName", this.getMName());
-			formObj.put("LastName", this.getLName());
+			formObj.put("FirstName", this.getFirstName());
+			formObj.put("MiddleName", this.getMiddleName());
+			formObj.put("LastName", this.getLastName());
 			formObj.put("Comments", aideSup.getCommentsText());
 			formObj.put("Changes", aideSup.getChangesText());
 		}
@@ -74,13 +76,19 @@ public class TestDataGenerator
 		Random rnd = new Random();
 		StringBuilder sb = new StringBuilder( len );
 		
-		for( int i = 0; i < len; i++ ){ 
-			if(type.equalsIgnoreCase("alpha")){
-				sb.append( alpha.charAt( rnd.nextInt(alpha.length()) ) );
-			}else if(type.equalsIgnoreCase("alphanum")){
-				sb.append( alphaNum.charAt( rnd.nextInt(alphaNum.length()) ) );
-			}else if(type.equalsIgnoreCase("num")){
-				sb.append( numeric.charAt( rnd.nextInt(numeric.length()) ) );
+		for( int i = 0; i < len; i++ )
+		{ 
+			if(type.equalsIgnoreCase("alpha"))
+			{
+				sb.append( alpha.charAt( rnd.nextInt(alpha.length())));
+			}
+			else if(type.equalsIgnoreCase("alphanum"))
+			{
+				sb.append( alphaNum.charAt( rnd.nextInt(alphaNum.length())));
+			}
+			else if(type.equalsIgnoreCase("num"))
+			{
+				sb.append( numeric.charAt( rnd.nextInt(numeric.length())));
 			}
 			
 		}

@@ -16,12 +16,38 @@ public class AideSupVisitObject extends BasePageObjects
     {
 		super(driver);
 	}
+    
+	String changesText = "";
+	String commentsText = "";
+	
+	//Setters
+	public void setChangesText(String changes)
+	{
+		this.changesText = changes;
+	}
+	
+	public void setCommentsText(String comments)
+	{
+		this.commentsText = comments;
+	}
+	
+	//Getters
+	public String getChangesText()
+	{
+		return this.changesText;
+	}
+	
+	public String getCommentsText()
+	{
+		return this.commentsText;
+	}
 
 	public void aideSupervisoryVisit()
     {
     	//Get Test Data
     	TestDataGenerator testData = new TestDataGenerator();
         HashMap<?,?> formObj = testData.generateFormObject("aideSupVisit");
+        CommonSeleniumUtils selUtil = new CommonSeleniumUtils();
         
         //Fill Form
         
@@ -37,14 +63,13 @@ public class AideSupVisitObject extends BasePageObjects
         //TODO radio button selection logic
         
         WebElement aideInstructions = driver.findElement(By.id("AideSupVisitInstruction"));
-        scrollToElem(aideInstructions);
+        selUtil.scrollToElem(aideInstructions);
         aideInstructions.sendKeys((String) formObj.get("Changes"));
         
         WebElement aideComments = driver.findElement(By.id("AideSupVisitComments"));
-        scrollToElem(aideComments);
+        selUtil.scrollToElem(aideComments);
         aideComments.sendKeys((String) formObj.get("Comments"));
         
     }
-
 
 }

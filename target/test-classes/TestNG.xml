@@ -2,7 +2,9 @@
 <suite name="KL Test Suite" verbose="1" >
   <test name="Regression Test Suite" >
     <classes>
-       <class name="com.klaf.testScripts.InitialLoginAttempt" />
+       <class name = "com.klaf.testScripts.BaseClass" />
+       <class name="com.klaf.testScripts.LoginAttempt" />
+       <class name = "com.klaf.testScripts.AideSupVisit" />
     </classes>
   </test>
 </suite>

@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -36,8 +36,8 @@
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" class="navigator-link" panel-name="suite-KL_Test_Suite">
-              <span class="suite-name border-skipped">KL Test Suite</span>
+            <a href="#" class="navigator-link" panel-name="suite-Default_suite">
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -47,37 +47,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="test-xml-KL_Test_Suite">
-                    <span>D:\AutomationRnDWorkspace\MobileAuto\src\test\java\TestNG.xml</span>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
+                    <span>C:\Users\sadiqs\AppData\Local\Temp\testng-eclipse-483576869\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="testlist-KL_Test_Suite">
+                  <a href="#" class="navigator-link " panel-name="testlist-Default_suite">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="group-KL_Test_Suite">
+                  <a href="#" class="navigator-link " panel-name="group-Default_suite">
                     <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="times-KL_Test_Suite">
+                  <a href="#" class="navigator-link " panel-name="times-Default_suite">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="reporter-KL_Test_Suite">
+                  <a href="#" class="navigator-link " panel-name="reporter-Default_suite">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="ignored-methods-KL_Test_Suite">
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Default_suite">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="chronological-KL_Test_Suite">
+                  <a href="#" class="navigator-link " panel-name="chronological-Default_suite">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -90,21 +90,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,  1 skipped,  </span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-KL_Test_Suite" class="hide-methods skipped suite-KL_Test_Suite"> (hide)</a> <!-- hide-methods skipped suite-KL_Test_Suite -->
-                      <a href="#" panel-name="suite-KL_Test_Suite" class="show-methods skipped suite-KL_Test_Suite"> (show)</a> <!-- show-methods skipped suite-KL_Test_Suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
                     </span>
-                    <div class="method-list-content skipped suite-KL_Test_Suite">
+                    <div class="method-list-content failed suite-Default_suite">
                       <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-KL_Test_Suite" title="com.klaf.testScripts.InitialLoginAttempt" hash-for-method="validCredentialsLogin">validCredentialsLogin</a> <!-- method navigator-link -->
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.klaf.testScripts.LoginAttempt" hash-for-method="validCredentialsLogin">validCredentialsLogin</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content skipped suite-KL_Test_Suite -->
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -115,11 +115,11 @@
     </div> <!-- navigator-root -->
     <div class="wrapper">
       <div class="main-panel-root">
-        <div panel-name="suite-KL_Test_Suite" class="panel KL_Test_Suite">
-          <div class="suite-KL_Test_Suite-class-skipped">
+        <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
-              <span class="class-name">com.klaf.testScripts.InitialLoginAttempt</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.klaf.testScripts.LoginAttempt</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -127,57 +127,88 @@
                   <a name="validCredentialsLogin">
                   </a> <!-- validCredentialsLogin -->
                   <span class="method-name">validCredentialsLogin</span>
+                  <div class="stack-trace">java.lang.NullPointerException
+	at com.klaf.pageObjects.BasePageObjects.initialLoginAttempt(BasePageObjects.java:21)
+	at com.klaf.testScripts.LoginAttempt.validCredentialsLogin(LoginAttempt.java:13)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-KL_Test_Suite-class-skipped -->
-        </div> <!-- panel KL_Test_Suite -->
-        <div panel-name="test-xml-KL_Test_Suite" class="panel">
+          </div> <!-- suite-Default_suite-class-failed -->
+        </div> <!-- panel Default_suite -->
+        <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">D:\AutomationRnDWorkspace\MobileAuto\src\test\java\TestNG.xml</span>
+            <span class="header-content">C:\Users\sadiqs\AppData\Local\Temp\testng-eclipse-483576869\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;KL Test Suite&quot;&gt;
-  &lt;test name=&quot;Regression Test Suite&quot;&gt;
+&lt;suite name=&quot;Default suite&quot;&gt;
+  &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.klaf.testScripts.InitialLoginAttempt&quot;/&gt;
+      &lt;class name=&quot;com.klaf.testScripts.BaseTest&quot;/&gt;
+      &lt;class name=&quot;com.klaf.testScripts.LoginAttempt&quot;/&gt;
+      &lt;class name=&quot;com.klaf.testScripts.AideSupVist&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Regression Test Suite --&gt;
-&lt;/suite&gt; &lt;!-- KL Test Suite --&gt;
+  &lt;/test&gt; &lt;!-- Default test --&gt;
+&lt;/suite&gt; &lt;!-- Default suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="testlist-KL_Test_Suite" class="panel">
+        <div panel-name="testlist-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Tests for KL Test Suite</span>
+            <span class="header-content">Tests for Default suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Regression Test Suite (1 class)</span>
+                <span class="test-name">Default test (3 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="group-KL_Test_Suite" class="panel">
+        <div panel-name="group-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Groups for KL Test Suite</span>
+            <span class="header-content">Groups for Default suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="times-KL_Test_Suite" class="panel">
+        <div panel-name="times-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Times for KL Test Suite</span>
+            <span class="header-content">Times for Default suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="times-div">
               <script type="text/javascript">
-suiteTableInitFunctions.push('tableData_KL_Test_Suite');
-function tableData_KL_Test_Suite() {
+suiteTableInitFunctions.push('tableData_Default_suite');
+function tableData_Default_suite() {
 var data = new google.visualization.DataTable();
 data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
@@ -186,48 +217,44 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'validCredentialsLogin')
-data.setCell(0, 2, 'com.klaf.testScripts.InitialLoginAttempt')
-data.setCell(0, 3, 1);
-window.suiteTableData['KL_Test_Suite']= { tableData: data, tableDiv: 'times-div-KL_Test_Suite'}
+data.setCell(0, 2, 'com.klaf.testScripts.LoginAttempt')
+data.setCell(0, 3, 24);
+window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 ms</span>
-              <div id="times-div-KL_Test_Suite">
-              </div> <!-- times-div-KL_Test_Suite -->
+              <span class="suite-total-time">Total running time: 24 ms</span>
+              <div id="times-div-Default_suite">
+              </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="reporter-KL_Test_Suite" class="panel">
+        <div panel-name="reporter-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Reporter output for KL Test Suite</span>
+            <span class="header-content">Reporter output for Default suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="ignored-methods-KL_Test_Suite" class="panel">
+        <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="chronological-KL_Test_Suite" class="panel">
+        <div panel-name="chronological-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">Methods in chronological order</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.klaf.testScripts.InitialLoginAttempt</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
+              <div class="chronological-class-name">com.klaf.testScripts.LoginAttempt</div> <!-- chronological-class-name -->
+              <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">beforeClass</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-class before -->
-              <div class="test-method">
                 <span class="method-name">validCredentialsLogin</span>
-                <span class="method-start">24009 ms</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
