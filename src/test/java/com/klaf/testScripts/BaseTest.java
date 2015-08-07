@@ -10,7 +10,9 @@ import io.appium.java_client.android.AndroidDriver;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import com.klaf.pageObjects.*;
@@ -23,7 +25,7 @@ public class BaseTest
 	AppiumDriver driver;
 	LaunchAppium io = new LaunchAppium();
 
-	@BeforeClass
+	@BeforeSuite
 	public void beforeClass() throws MalformedURLException 
 	{
 		//Start Appium
@@ -35,22 +37,23 @@ public class BaseTest
 
 		//Android Desired Capabilities
 		DesiredCapabilities capa = new DesiredCapabilities();
-
-		capa.setCapability("deviceName","Samsung");
+		
 		capa.setCapability("automationName","Appium");
 		capa.setCapability("platformName","Android");
+		capa.setCapability("platformVersion",4.4); //Set platform name as test device
+		capa.setCapability("deviceName","Samsung");
+		capa.setCapability("autoWebview", true);
 		capa.setCapability("app", app.getAbsolutePath());
-		capa.setCapability("appPackage", "com.kinnser.link");
-		capa.setCapability("appActivity", "com.kinnser.link.MainActivity");
-
-		//Stating the Applicaion using appium driver
+		
+		//Stating the Application using appium driver
+		System.out.println("Initiating App Launch");
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capa);
 		
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
  
 	}
 	
-	@AfterClass
+	@AfterSuite
 	public void afterClass()
 	{
 		driver.quit();
