@@ -1,8 +1,16 @@
 package com.klaf.pageObjects;
 
+import io.appium.java_client.AppiumDriver;
+
 public class DocumentsObject 
 {
-	//Edit Form
+	protected AppiumDriver driver;
+	
+	public DocumentsObject(AppiumDriver driver)
+	{
+		this.driver = driver;
+	}
+	//Edit Form - Opening a saved form from documents
 	
 	//Verify Saved Forms
 	

@@ -33,29 +33,30 @@ public class BasePageObjects
 	
 	public void navtoSideMenu()
 	{
-        System.out.println("Navigating to New Documents");
-        
-        //Navigate to New Documents
-        WebDriverWait wait = new WebDriverWait(driver, 60);
-        WebElement element = driver.findElement(By.id("newDoc"));
-        wait.until(ExpectedConditions.elementToBeClickable(element));
-   
-        if (element.isDisplayed())
-        	element.click();
-        else
-        	System.out.println("Element not present");
+
 	}
 	
-	public void openNewDocForm()
+	//Navigating from Hotbox to New Documents by taping on New Documents button
+	public void navtoNewDocFromHotbox()
 	{
-        WebElement aideSup = driver.findElement(By.id("doc_3"));
-        String formName = aideSup.getText();
-        System.out.println(formName);
-        WebDriverWait wait = new WebDriverWait(driver, 60);
-        wait.until(ExpectedConditions.elementToBeClickable(aideSup));
-        System.out.println("Navigating to Aide Supervisory Visit form");
-        aideSup.click();
-
+		try
+		{
+	        WebDriverWait wait = new WebDriverWait(driver, 60);
+	        WebElement element = driver.findElement(By.id("newDoc"));
+	        wait.until(ExpectedConditions.elementToBeClickable(element));
+	   
+	        if (element.isDisplayed())
+	        	element.click();
+	        else
+	        	System.out.println("Element not present");
+	        
+	        Thread.sleep(2000);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+ 
 	}
 
 }

@@ -48,7 +48,7 @@ public class BaseTest
 		//Stating the Application using appium driver
 		System.out.println("Initiating App Launch");
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capa);
-		
+		System.out.println("App Launched");
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
  
 	}
