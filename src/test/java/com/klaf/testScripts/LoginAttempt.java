@@ -6,13 +6,15 @@ import org.testng.annotations.Test;
 
 import com.klaf.pageObjects.*;
 
-public class LoginAttempt 
+
+public class LoginAttempt
 {
 	AppiumDriver driver;
 	
 	@Test
 	public void validCredentialsLogin()
 	{
+		System.out.println("Executing Login Test");
 		BasePageObjects base = new BasePageObjects(driver);
 		base.initialLoginAttempt("sadiq.shaik", "mma4user");
 		//Add Assertion for successful login

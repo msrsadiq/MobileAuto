@@ -3,12 +3,6 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.klaf.testScripts.BaseTest">
-        <methods>
-          <include name="beforeClass"/>
-          <include name="afterClass"/>
-        </methods>
-      </class> <!-- com.klaf.testScripts.BaseTest -->
       <class name="com.klaf.testScripts.LoginAttempt">
         <methods>
           <include name="validCredentialsLogin"/>

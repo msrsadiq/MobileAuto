@@ -22,8 +22,11 @@ public class LaunchAppium
 				{
 					System.out.println("Launching Application...");
 					appium = Runtime.getRuntime().exec(new String[]{"cmd.exe", "/C", "Start", file.getAbsolutePath()});
-					Thread.sleep(10000);
+					
 				}
+				System.out.println("Wait for appium to start");
+				Thread.sleep(20000);
+				System.out.println("Wait Ends");
 			}
 			catch (Exception e)
 			{

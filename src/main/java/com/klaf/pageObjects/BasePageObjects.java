@@ -1,5 +1,7 @@
 package com.klaf.pageObjects;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -10,53 +12,64 @@ import io.appium.java_client.AppiumDriver;
 public class BasePageObjects 
 {
 	protected AppiumDriver driver;
-	
-	public BasePageObjects(AppiumDriver driver)
+
+	public BasePageObjects(AppiumDriver driver) 
 	{
 		this.driver = driver;
 	}
 
-	public void initialLoginAttempt(String userName, String password)
+	public void initialLoginAttempt(String userName, String password) 
 	{
-        WebElement username = driver.findElement(By.id("username"));
-        if(username.isDisplayed())
-        {
-        	username.sendKeys(userName);
-        }
-        
-        WebElement pwd = driver.findElement(By.id("password"));
-        pwd.sendKeys(password);
-        
-        WebElement loginButton = driver.findElement(By.id("btnSignIn"));
-        loginButton.click();
+		try 
+		{
+			System.out.println("Entering Credentials");
+			WebElement un = driver.findElement(By.id("username"));
+			if (un.isDisplayed())
+			{
+				un.sendKeys(userName);
+			}
+
+			WebElement pwd = driver.findElement(By.id("password"));
+			pwd.sendKeys(password);
+
+			WebElement loginButton = driver.findElement(By.xpath("html/body/ion-nav-view/ion-nav-view/ion-content/div[1]/div/form/div[2]/button"));
+			loginButton.click();
+			
+			Thread.sleep(10000);
+			System.out.println("Login Successful");
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
 	}
-	
-	public void navtoSideMenu()
+
+	public void navtoSideMenu() 
 	{
 
 	}
-	
-	//Navigating from Hotbox to New Documents by taping on New Documents button
-	public void navtoNewDocFromHotbox()
+
+	// Navigating from Hotbox to New Documents by taping on New Documents button
+	public void navtoNewDocFromHotbox() 
 	{
-		try
+		try 
 		{
-	        WebDriverWait wait = new WebDriverWait(driver, 60);
-	        WebElement element = driver.findElement(By.id("newDoc"));
-	        wait.until(ExpectedConditions.elementToBeClickable(element));
-	   
-	        if (element.isDisplayed())
-	        	element.click();
-	        else
-	        	System.out.println("Element not present");
-	        
-	        Thread.sleep(2000);
-		}
+			WebDriverWait wait = new WebDriverWait(driver, 60);
+			WebElement element = driver.findElement(By.xpath("html/body/ion-nav-view/ion-side-menus/ion-side-menu-content/ion-nav-view/ion-view/ion-content/div[1]/div[3]/div/ul/li/button"));
+			wait.until(ExpectedConditions.elementToBeClickable(element));
+
+			if (element.isDisplayed())
+				element.click();
+			else
+				System.out.println("Element not present");
+
+			Thread.sleep(2000);
+		} 
 		catch (Exception e)
 		{
 			e.printStackTrace();
 		}
- 
+
 	}
 
 }
