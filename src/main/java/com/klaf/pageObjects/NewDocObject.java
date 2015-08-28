@@ -18,6 +18,7 @@ public class NewDocObject extends BasePageObjects
 	{
 		try
 		{
+			System.out.println("NewDoc Page Object driver: "+driver);
 			WebElement form = driver.findElement(By.id(formName));
 			String name = form.getText();
 			WebDriverWait wait = new WebDriverWait(driver, 60);

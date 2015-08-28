@@ -55,7 +55,7 @@ public class BasePageObjects
 		try 
 		{
 			WebDriverWait wait = new WebDriverWait(driver, 60);
-			WebElement element = driver.findElement(By.xpath("html/body/ion-nav-view/ion-side-menus/ion-side-menu-content/ion-nav-view/ion-view/ion-content/div[1]/div[3]/div/ul/li/button"));
+			WebElement element = driver.findElement(By.id("newDoc_hotbox"));
 			wait.until(ExpectedConditions.elementToBeClickable(element));
 
 			if (element.isDisplayed())
