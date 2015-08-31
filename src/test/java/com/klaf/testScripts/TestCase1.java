@@ -5,8 +5,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -15,17 +18,20 @@ import org.testng.annotations.Test;
 import com.klaf.pageObjects.*;
 import com.klaf.javaUtils.*;
 
-public class TestCase1 {
+public class TestCase1 
+{
 	AndroidDriver driver;
+	//WebDriver driver;
 
 	LaunchAppium io = new LaunchAppium();
 
 	@BeforeSuite
-	public void beforeClass() throws MalformedURLException {
+	public void beforeClass() throws MalformedURLException 
+	{
 
 		try {
 			// Start Appium
-			// io.StartAppium();
+			io.StartAppium();
 
 			// Configuring APK File Path
 			File appDir = new File("C:\\Users\\sadiqs\\Desktop\\apk");
@@ -37,22 +43,26 @@ public class TestCase1 {
 			capa.setCapability("automationName", "Appium");
 			capa.setCapability("platformName", "Android");
 			capa.setCapability("platformVersion", 4.4); // Set platform name as
-														// test device
 			capa.setCapability("deviceName", "Samsung");
 			capa.setCapability("app", app.getAbsolutePath());
 			capa.setCapability("appPackage", "com.kinnser.link");
+			capa.setCapability("launchActivity", "com.kinnser.link.MainActivity");
 			capa.setCapability("autoWebview", true);
-
+			
+		
 			// Stating the Application using appium driver
 			System.out.println("Initiating App Launch");
 
-			driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),
-					capa);
+			driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capa);
+			Thread.sleep(100);
+		/*	driver = new FirefoxDriver();
+			driver.get("http://192.168.30.109:8100/");
+			driver.manage().window().maximize();*/
 
 			System.out.println("App Launched");
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-			Thread.sleep(10000);
-			System.out.println(driver.getContext());
+			Thread.sleep(100);
+		//	System.out.println(((AppiumDriver) driver).getContext());
 			System.out.println("Driver After Launching Appium: " + driver);
 		} catch (InterruptedException e) {
 			e.printStackTrace();

@@ -5,6 +5,7 @@ import io.appium.java_client.AppiumDriver;
 import java.util.HashMap;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.klaf.javaUtils.*;
@@ -50,20 +51,21 @@ public class AideSupVisitObject extends BasePageObjects
         CommonSeleniumUtils selUtil = new CommonSeleniumUtils();
         
         //Fill Form
-        
-        WebElement firstName = driver.findElement(By.id("firstName"));
+        System.out.println("Aide Sup Visit");
+     /*   WebElement firstName = driver.findElement(By.id("First"));
         firstName.sendKeys((String)formObj.get("FirstName"));
         
-        WebElement middleName = driver.findElement(By.id("middleName"));
+        WebElement middleName = driver.findElement(By.id("Middle"));
         middleName.sendKeys((String)formObj.get("MiddleName"));
         
-        WebElement lastName = driver.findElement(By.id("lastName"));
+        WebElement lastName = driver.findElement(By.id("Last"));
         lastName.sendKeys((String)formObj.get("LastName"));
-        
+        */
         //TODO radio button selection logic
         
         WebElement supDate = driver.findElement(By.xpath("//*[@id='frm_sDate']/label/button"));
-        selUtil.scrollToElem(supDate);
+        System.out.println(supDate.getText());
+     //   selUtil.scrollToElem(supDate);
         supDate.click();
         
         WebElement supName = driver.findElement(By.id("supervisorName"));
