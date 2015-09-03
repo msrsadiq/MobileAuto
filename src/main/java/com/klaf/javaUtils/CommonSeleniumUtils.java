@@ -8,6 +8,11 @@ import org.openqa.selenium.interactions.Actions;
 public class CommonSeleniumUtils 
 {
 	protected AppiumDriver driver;
+	
+	public CommonSeleniumUtils(AppiumDriver driver) 
+	{
+		this.driver = driver;
+	}
 
 	public void webdriverWait()
 	{

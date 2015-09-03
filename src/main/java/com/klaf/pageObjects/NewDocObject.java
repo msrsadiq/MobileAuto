@@ -19,14 +19,12 @@ public class NewDocObject extends BasePageObjects
 	{
 		try
 		{
-			System.out.println("NewDoc Page Object driver: "+driver);
 			WebElement form = driver.findElement(By.id(formName));
 			String name = form.getText();
+			System.out.println("Opening Form: "+name);
 			WebDriverWait wait = new WebDriverWait(driver, 60);
 			wait.until(ExpectedConditions.elementToBeClickable(form));
-			System.out.println("Navigating to form: "+name);
 			form.click();
-
 		}
 		catch (Exception e)
 		{

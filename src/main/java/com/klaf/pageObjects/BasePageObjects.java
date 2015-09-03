@@ -35,10 +35,10 @@ public class BasePageObjects
 			WebElement pwd = driver.findElement(By.id("password"));
 			pwd.sendKeys(password);
 
-			WebElement loginButton = driver.findElement(By.xpath("html/body/ion-nav-view/ion-nav-view/ion-content/div[1]/div/form/div[2]/button"));
+			WebElement loginButton = driver.findElement(By.id("sign_In"));
 			loginButton.click();
 			
-			Thread.sleep(10000);
+			Thread.sleep(5000);
 			System.out.println("Login Successful");
 		} 
 		catch (Exception e) 
@@ -57,6 +57,7 @@ public class BasePageObjects
 	{
 		try 
 		{
+			System.out.println("Navigating to New Documents");
 			WebDriverWait wait = new WebDriverWait(driver, 60);
 			WebElement element = driver.findElement(By.id("newDoc_hotbox"));
 			wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -66,7 +67,7 @@ public class BasePageObjects
 			else
 				System.out.println("Element not present");
 
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 		} 
 		catch (Exception e)
 		{

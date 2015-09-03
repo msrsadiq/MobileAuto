@@ -53,8 +53,8 @@ public class TestDataGenerator
 		if(formName.equalsIgnoreCase("aideSupVisit"))
 		{
 			AideSupVisitObject aideSup = new AideSupVisitObject(null);
-			aideSup.setChangesText(randomStringGenerator(200, "alphanum"));
-			aideSup.setCommentsText(randomStringGenerator(200, "alphanum"));
+			aideSup.setChangesText(randomStringGenerator(10, "alphanum"));
+			aideSup.setCommentsText(randomStringGenerator(10, "alphanum"));
 			
 			formObj.put("FirstName", this.getFirstName());
 			formObj.put("MiddleName", this.getMiddleName());

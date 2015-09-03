@@ -11,7 +11,10 @@ import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
@@ -20,12 +23,12 @@ import com.klaf.javaUtils.*;
 
 public class TestCase1 
 {
-	AndroidDriver driver;
+	AppiumDriver driver;
 	//WebDriver driver;
 
 	LaunchAppium io = new LaunchAppium();
 
-	@BeforeSuite
+	@BeforeClass
 	public void beforeClass() throws MalformedURLException 
 	{
 
@@ -35,7 +38,7 @@ public class TestCase1
 
 			// Configuring APK File Path
 			File appDir = new File("C:\\Users\\sadiqs\\Desktop\\apk");
-			File app = new File(appDir, "KinnserLink-debug-unaligned2.apk");
+			File app = new File(appDir, "CordovaApp-debug-unaligned.apk");
 
 			// Android Desired Capabilities
 			DesiredCapabilities capa = new DesiredCapabilities();
@@ -48,47 +51,49 @@ public class TestCase1
 			capa.setCapability("appPackage", "com.kinnser.link");
 			capa.setCapability("launchActivity", "com.kinnser.link.MainActivity");
 			capa.setCapability("autoWebview", true);
-			
-		
+	
 			// Stating the Application using appium driver
 			System.out.println("Initiating App Launch");
+			
+			//Thread.sleep(3000);
 
 			driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capa);
+
 			Thread.sleep(100);
-		/*	driver = new FirefoxDriver();
-			driver.get("http://192.168.30.109:8100/");
-			driver.manage().window().maximize();*/
 
 			System.out.println("App Launched");
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 			Thread.sleep(100);
-		//	System.out.println(((AppiumDriver) driver).getContext());
 			System.out.println("Driver After Launching Appium: " + driver);
-		} catch (InterruptedException e) {
+		} 
+		catch (InterruptedException e)
+		{
 			e.printStackTrace();
 		}
-		// return driver;
-
 	}
 
-	@AfterSuite
-	public void afterClass() {
+	@AfterClass
+	public void afterClass()
+	{
 		System.out.println("Exiting Appium");
 		driver.quit();
 	}
 
 	@Test(priority = 1)
-	public void validCredentialsLogin() {
+	public void validCredentialsLogin() 
+	{
 		System.out.println("Executing Login Test");
 		BasePageObjects base = new BasePageObjects(driver);
-		System.out.println("test");
 		base.initialLoginAttempt("sadiq.shaik", "mma4user");
+		
 		// Add Assertion for successful login
 	}
 
 	@Test(priority = 2)
-	public void saveAideSupVisitfromDocuments() {
-		try {
+	public void saveAideSupVisitfromDocuments() 
+	{
+		try 
+		{
 			System.out.println("Aidesupvisit");
 			// Navigate to New Documents
 			BasePageObjects basepage = new BasePageObjects(driver);
@@ -102,8 +107,12 @@ public class TestCase1
 			// Save the Form - Navigate to Documents
 
 			// Confirm form is saved
+			
+			System.out.println("Completed Aide Sup Visit");
 
-		} catch (Exception e) {
+		}
+		catch (Exception e)
+		{
 			e.printStackTrace();
 		}
 	}
