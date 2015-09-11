@@ -116,5 +116,32 @@ public class TestCase1
 			e.printStackTrace();
 		}
 	}
+	
+	public void rnInitialAssVitalSigns() 
+	{
+		try 
+		{
+			System.out.println("Rn Initial Assessment Vital Sigs");
+			// Navigate to New Documents
+			BasePageObjects basepage = new BasePageObjects(driver);
+			basepage.navtoNewDocFromHotbox();
+			// Open Aide Supervisory Form
+			NewDocObject newdoc = new NewDocObject(driver);
+			newdoc.openForm("newdoc_1");
+			// Fill the form
+			RNInitilAssesVitalSignsObject rnia = new RNInitilAssesVitalSignsObject(driver);
+			rnia.rnInitialAssessment();
+			// Save the Form - Navigate to Documents
+
+			// Confirm form is saved
+			
+			System.out.println("Completed Rn Initial Assessment");
+
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
 
 }
