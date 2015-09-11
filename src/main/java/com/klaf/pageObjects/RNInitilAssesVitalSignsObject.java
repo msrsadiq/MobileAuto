@@ -12,10 +12,10 @@ import com.klaf.javaUtils.TestDataGenerator;
 
 import io.appium.java_client.AppiumDriver;
 
-public class RNInitilAssessmentObject extends BasePageObjects 
+public class RNInitilAssesVitalSignsObject extends BasePageObjects 
 {
 
-	public RNInitilAssessmentObject(AppiumDriver driver) 
+	public RNInitilAssesVitalSignsObject(AppiumDriver driver) 
 	{
 		super(driver);
 	}
