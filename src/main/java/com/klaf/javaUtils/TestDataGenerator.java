@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Random;
 
 import com.klaf.pageObjects.AideSupVisitObject;
+import com.klaf.pageObjects.RNInitilAssessmentObject;
 
 public class TestDataGenerator 
 {
@@ -61,6 +62,19 @@ public class TestDataGenerator
 			formObj.put("LastName", this.getLastName());
 			formObj.put("Comments", aideSup.getCommentsText());
 			formObj.put("Changes", aideSup.getChangesText());
+		}
+		
+		else if(formName.equalsIgnoreCase("RNInitialAssessment"))
+		{
+			RNInitilAssessmentObject rninitial = new RNInitilAssessmentObject(null);
+			rninitial.setChangesText(randomStringGenerator(10, "alphanum"));
+			rninitial.setCommentsText(randomStringGenerator(10, "alphanum"));
+			
+			formObj.put("FirstName", this.getFirstName());
+			formObj.put("MiddleName", this.getMiddleName());
+			formObj.put("LastName", this.getLastName());
+			formObj.put("Comments", rninitial.getCommentsText());
+			formObj.put("Changes", rninitial.getChangesText());
 		}
 		
 				
