@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Random;
 
 import com.klaf.pageObjects.AideSupVisitObject;
+import com.klaf.pageObjects.BasePageObjects;
 import com.klaf.pageObjects.RNInitilAssesVitalSignsObject;
 
 public class TestDataGenerator 
@@ -43,7 +44,7 @@ public class TestDataGenerator
 	    return randomNum;
 	}
 	
-	public HashMap<?, ?> generateFormObject(String formName)
+	public HashMap<String, String> generateFormObject(String formName)
 	{
 		
 		HashMap<String, String> formObj = new HashMap<String, String>();
@@ -57,11 +58,12 @@ public class TestDataGenerator
 			aideSup.setChangesText(randomStringGenerator(10, "alphanum"));
 			aideSup.setCommentsText(randomStringGenerator(10, "alphanum"));
 			
-			formObj.put("FirstName", this.getFirstName());
+			/**formObj.put("FirstName", this.getFirstName());
 			formObj.put("MiddleName", this.getMiddleName());
 			formObj.put("LastName", this.getLastName());
 			formObj.put("Comments", aideSup.getCommentsText());
-			formObj.put("Changes", aideSup.getChangesText());
+			formObj.put("Changes", aideSup.getChangesText());*/
+			formObj=setPatientInfo(formObj, aideSup.getCommentsText(),aideSup.getChangesText());
 		}
 		
 		else if(formName.equalsIgnoreCase("RNInitialAssessment"))
@@ -70,14 +72,27 @@ public class TestDataGenerator
 			rninitial.setChangesText(randomStringGenerator(10, "alphanum"));
 			rninitial.setCommentsText(randomStringGenerator(10, "alphanum"));
 			
-			formObj.put("FirstName", this.getFirstName());
+			/**formObj.put("FirstName", this.getFirstName());
 			formObj.put("MiddleName", this.getMiddleName());
 			formObj.put("LastName", this.getLastName());
 			formObj.put("Comments", rninitial.getCommentsText());
-			formObj.put("Changes", rninitial.getChangesText());
+			formObj.put("Changes", rninitial.getChangesText());*/
+			
+			formObj=setPatientInfo(formObj, rninitial.getCommentsText(),rninitial.getChangesText());
 		}
 		
 				
+		return formObj;
+	}
+	
+	private HashMap<String, String> setPatientInfo(HashMap<String,String> formObj,String comment,String changeText){
+		
+		formObj.put("FirstName", this.getFirstName());
+		formObj.put("MiddleName", this.getMiddleName());
+		formObj.put("LastName", this.getLastName());
+		formObj.put("Comments", comment);
+		formObj.put("Changes", changeText);
+		
 		return formObj;
 	}
 	

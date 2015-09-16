@@ -141,7 +141,7 @@ public class RNInitilAssesVitalSignsObject extends BasePageObjects
         selUtil.scrollToElem(heightin);
         heightin.click();
  
-        WebElement canWeighted = driver.findElement(By.id("//*[@id='vital signs']/div[3]/div/div/div[3]/div/div/div/div/div/label[1]/div"));
+        WebElement canWeighted = driver.findElement(By.xpath("//*[@id='vital signs']/div[3]/div/div/div[3]/div/div/div/div/div/label[1]/div"));
         selUtil.scrollToElem(canWeighted);
         timeIn.click();
  
